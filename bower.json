@@ -1,11 +1,11 @@
 {
-  "name": "yen",
-  "main": "yen.min.js",
+  "name": "penny",
+  "main": "penny.min.js",
   "version": "0.1.10",
   "authors": [
     "Wanasit Tanakitrungruang <berrysboy@gmail.com>"
   ],
-  "description": "A natural language money parser in Javascript",
+  "description": "A natural language currency parser in Javascript",
   "license": "MIT",
   "ignore": [
     "**/.*",

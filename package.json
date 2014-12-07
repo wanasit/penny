@@ -1,8 +1,13 @@
 {
-  "name": "penny-js",
+  "name": "penny-node",
   "description": "A natural language currency parser in Javascript",
   "license": "MIT",
   "version": "0.0.1",
+  "homepage": "http://github.com/berryboy/penny",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/berryboy/penny.git"
+  },
   "directories": {
     "source": "./src",
     "test-qunit": "./test-qunit"
@@ -21,7 +26,7 @@
     "watchify": "^2.1.1"
   },
   "scripts": {
-    "make-bundle": "browserify src/penny.js -d --s penny -o chrono.js",
+    "make-bundle": "browserify src/penny.js -d --s penny -o penny.js",
     "make-minify": "browserify src/penny.js -d --s penny -d -p [minifyify --output penny.map.json] -o penny.min.js",
     "make": "npm run make-bundle & npm run make-minify",
     "watch": "watchify src/penny.js -dv --s penny -o penny.js",
