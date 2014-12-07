@@ -1,0 +1,30 @@
+{
+  "name": "penny-js",
+  "description": "A natural language currency parser in Javascript",
+  "license": "MIT",
+  "version": "0.0.1",
+  "directories": {
+    "source": "./src",
+    "test-qunit": "./test-qunit"
+  },
+  "main": "./src/penny",
+  "devDependencies": {
+    "browserify": "^6.3.3",
+    "karma": "~0.10.4",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-qunit": "~0.1.1",
+    "karma-script-launcher": "~0.1.0",
+    "minifyify": "^4.4.0",
+    "qunitjs": "~1.14.0",
+    "uglify-js": "~2.4.1",
+    "watchify": "^2.1.1"
+  },
+  "scripts": {
+    "make-bundle": "browserify src/penny.js -d --s penny -o chrono.js",
+    "make-minify": "browserify src/penny.js -d --s penny -d -p [minifyify --output penny.map.json] -o penny.min.js",
+    "make": "npm run make-bundle & npm run make-minify",
+    "watch": "watchify src/penny.js -dv --s penny -o penny.js",
+    "karma": "karma start"
+  }
+}

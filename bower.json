@@ -1,0 +1,17 @@
+{
+  "name": "yen",
+  "main": "yen.min.js",
+  "version": "0.1.10",
+  "authors": [
+    "Wanasit Tanakitrungruang <berrysboy@gmail.com>"
+  ],
+  "description": "A natural language money parser in Javascript",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test-nodeunit",
+    "test-qunit"
+  ]
+}
