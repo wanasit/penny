@@ -68,18 +68,18 @@ test("Test - Parse dollar sign", function() {
 });
 
 
-// test("Test - General Numbers", function() {
+test("Test - General Numbers", function() {
 
-// 	var results = penny.parse('150,000.00');
-// 	ok(results.length == 1, JSON.stringify( results ) )
+	var results = penny.parse('150,000.00');
+	ok(results.length == 1, JSON.stringify( results ) )
 
-// 	if (results[0]) {
-// 		ok(results[0].index == 0, JSON.stringify( results ) )
-// 		ok(results[0].text == '150,000.00', JSON.stringify( results ) )
-// 		ok(results[0].number == 150000.00, JSON.stringify( results ) )
-// 		ok(!results[0].currency, JSON.stringify( results ) )
-// 	}
-// });
+	if (results[0]) {
+		ok(results[0].index == 0, JSON.stringify( results ) )
+		ok(results[0].text == '150,000.00', JSON.stringify( results ) )
+		ok(results[0].number == 150000.00, JSON.stringify( results ) )
+		ok(!results[0].currency, JSON.stringify( results ) )
+	}
+});
 
 //$39,179.00 to $50,932.00 
 //
