@@ -3,7 +3,7 @@
 */
 var Refiner = require('../refiner').Refiner;
 
-var PREFIX_YEN_SIGN_PATTERN = /¥\s*$/;
+var PREFIX_YEN_SIGN_PATTERN = /(¥|￥)\s*$/;
 var POSTFIX_YEN_SIGN_PATTERN = /^\s*円/;
 
 exports.Refiner = function JPYenSignExtractRefiner() {

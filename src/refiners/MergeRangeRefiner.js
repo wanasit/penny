@@ -3,10 +3,10 @@
 */
 var Refiner = require('./refiner').Refiner;
 
-var PATTERN = new RegExp("^\\s*(and|to|-|~|ー|〜)?\\s*$");
+var PATTERN = new RegExp("^\\s*(and|to|-|~|ー|〜|～)?\\s*$");
 
 function isAbleToMerge(text, prevResult, curResult){
-    
+
     var textBetween = text.substring(prevResult.index + prevResult.text.length, curResult.index);
     return textBetween.length > 0 && textBetween.match(PATTERN);
 }

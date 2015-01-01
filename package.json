@@ -2,7 +2,7 @@
   "name": "penny-node",
   "description": "A natural language currency parser in Javascript",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "http://github.com/berryboy/penny",
   "repository": {
     "type": "git",
