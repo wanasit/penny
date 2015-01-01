@@ -15,14 +15,15 @@
   "main": "./src/penny",
   "devDependencies": {
     "browserify": "^6.3.3",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.5",
     "karma": "~0.10.4",
     "karma-chrome-launcher": "~0.1.0",
     "karma-firefox-launcher": "~0.1.0",
     "karma-qunit": "~0.1.1",
     "karma-script-launcher": "~0.1.0",
     "minifyify": "^4.4.0",
-    "qunitjs": "~1.14.0",
-    "uglify-js": "~2.4.1",
+    "qunit": "git://github.com/wanasit/node-qunit.git",
     "watchify": "^2.1.1"
   },
   "scripts": {
@@ -30,6 +31,8 @@
     "make-minify": "browserify src/penny.js -d --s penny -d -p [minifyify --output penny.map.json] -o penny.min.js",
     "make": "npm run make-bundle & npm run make-minify",
     "watch": "watchify src/penny.js -dv --s penny -o penny.js",
-    "karma": "karma start"
+    "karma": "karma start",
+    "test": "qunit -c penny:src/penny.js -p src -t test-qunit/*.js --cov",
+    "coveralls": "npm run test && cat coverage/lcov.info | coveralls"
   }
 }

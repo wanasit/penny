@@ -1,9 +1,9 @@
 
-var Penny = function(options) {
+var Penny = function(option) {
 
-    this.options = options;
-    this.parsers = new Object(options.parsers);
-    this.refiners = new Object(options.refiners);
+    this.option = option;
+    this.parsers = new Object(option.parsers);
+    this.refiners = new Object(option.refiners);
 }
 
 Penny.prototype.parse = function(text, opt) {
@@ -17,7 +17,10 @@ Penny.prototype.parse = function(text, opt) {
         allResults = allResults.concat(results);
     });
     
-    // Sort allResults
+    allResults.sort(function(a, b) {
+        return a.index - b.index;
+    });
+
     this.refiners.forEach(function (refiner) {
         allResults = refiner.refine(text, allResults, opt);
     });
@@ -33,8 +36,8 @@ exports.ParsedResult = require('./result').ParsedResult;
 
 exports.options = require('./options');
 
-exports.strict = new Penny(exports.options.strictOptions());
-exports.general = new Penny(exports.options.generalOptions());
+exports.strict = new Penny(exports.options.strictOption());
+exports.general = new Penny(exports.options.generalOption());
 
 exports.parse = function () {
     return exports.general.parse.apply(exports.general, arguments);

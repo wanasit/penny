@@ -8,7 +8,7 @@ var PATTERN = new RegExp("^\\s*(and|to|-|~|ー|〜)?\\s*$");
 function isAbleToMerge(text, prevResult, curResult){
     
     var textBetween = text.substring(prevResult.index + prevResult.text.length, curResult.index);
-    return textBetween.match(PATTERN);
+    return textBetween.length > 0 && textBetween.match(PATTERN);
 }
 
 
@@ -47,13 +47,11 @@ exports.Refiner = function MergeRangeResult() {
         var prevResult = null;
         
         for (var i=1; i<results.length; i++){
-            
             currResult = results[i];
             prevResult = results[i-1];
             
             if (!prevResult.numberMin && !currResult.numberMax 
                 && isAbleToMerge(text, prevResult, currResult)) {
-              
                 prevResult = mergeResult(text, prevResult, currResult);
                 currResult = null;
                 i += 1;
